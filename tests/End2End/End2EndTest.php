@@ -185,7 +185,7 @@ class End2EndTest extends WebTestCase
 
         $this->assertNotNull($sentryClient);
 
-        $sentryClient->getOptions()->setCaptureSilencedErrors(true);
+        $this->assertTrue($sentryClient->getOptions()->shouldCaptureSilencedErrors());
 
         $client->request('GET', '/notice');
 
